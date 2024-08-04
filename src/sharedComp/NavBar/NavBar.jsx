@@ -6,8 +6,7 @@ import { Avatar, Badge, IconButton, Menu, MenuItem, styled, Tooltip } from '@mui
 import { CiBoxes, CiShoppingCart, CiUser } from 'react-icons/ci';
 import { MdLogout } from 'react-icons/md';
 import { FaCartShopping } from "react-icons/fa6";
-// import Logo from '../../assets/Logo';
-// import LOGO from '../../assets/LOGO.png';
+import { TbShoppingCartStar } from "react-icons/tb";
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
@@ -36,12 +35,12 @@ const NavBar = () => {
     };
 
     return (
-        <nav className='bg-white scroll-smooth shadow-md sticky top-0 z-50'>
+        <nav className='bg-white scroll-smooth  sticky top-0 z-50'>
             <div className='container mx-auto px-4 py-3 flex justify-around items-center'>
-                <Link to="/" className='transition duration-300 h-[60px]'>
+                <Link to="/" className='transition duration-300 '>
                        {/* <Logo /> */}
-                       {/* <img src={LOGO} alt="GLORY" className='h-[55px]' style={{filter: "drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.5))"}}/> */}
-                       ECOMMERCE
+                       <img src={`https://zerodha.com/static/images/products/console.svg`} alt="GLORY" className='h-10'/>
+                       
                 </Link>
                 <div className='flex-1 max-w-xl mx-4'></div>
                 <div className='flex items-center space-x-4'>
@@ -81,24 +80,16 @@ const NavBar = () => {
                                     },
                                 }}
                             >
-                                <MenuItem onClick={() => { handleClose(); navigate("/profile"); }}>
+                                <MenuItem onClick={() => { handleClose();  }}>
                                     <Avatar src={`${import.meta.env.VITE_API_URI}/${user?.userImage}`} /> Profile
                                 </MenuItem>
                                 {role === "user" ? (
-                                    <MenuItem onClick={() => { handleClose(); navigate("/myorder"); }}>
+                                    <MenuItem onClick={() => { handleClose(); }}>
                                         <CiShoppingCart className='mr-2' /> My Order
                                     </MenuItem>
                                 ) : (
                                     <div>
-                                        <MenuItem onClick={() => { handleClose(); navigate("/adminuser"); }}>
-                                            <CiUser className='mr-2' /> Users
-                                        </MenuItem>
-                                        <MenuItem onClick={() => { handleClose(); navigate("/adminorder"); }}>
-                                            <CiShoppingCart className='mr-2' /> Orders
-                                        </MenuItem>
-                                        <MenuItem onClick={() => { handleClose(); navigate("/adminproduct"); }}>
-                                            <CiBoxes className='mr-2' /> Products
-                                        </MenuItem>
+                                       
                                     </div>
                                 )}
                                 <MenuItem onClick={handleLogOut}>

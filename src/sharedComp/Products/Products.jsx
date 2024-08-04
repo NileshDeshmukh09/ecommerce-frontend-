@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { add } from '../../redux/slices/cartSlice';
 import { fetchProducts, STATUES } from '../../redux/slices/productSlice';
 import { useNavigate } from 'react-router-dom';
+import { CircularProgress } from '@mui/material';
 
 const Products = () => {
     const dispatch = useDispatch();
@@ -35,7 +36,7 @@ const Products = () => {
     if (status === STATUES.LOADING) {
         return (
             <div className='flex items-center justify-center h-screen'>
-                <div className='text-3xl font-bold text-gray-700 animate-pulse'>Loading...</div>
+                <div className='text-3xl font-bold text-gray-700 animate-pulse'><CircularProgress /></div>
             </div>
         );
     }
@@ -74,7 +75,7 @@ const Products = () => {
                             <button
                                 onClick={() => { handleClick(item) }}
                                 className={`w-full py-2 px-4 rounded-full font-semibold transition-colors duration-300 ${item.status
-                                    ? 'bg-orange-500 hover:bg-orange-600 text-white'
+                                    ? 'bg-primary-main hover:bg-primary-main text-white'
                                     : 'bg-gray-300 text-gray-500 cursor-not-allowed'
                                     }`}
                                 disabled={!item.status}

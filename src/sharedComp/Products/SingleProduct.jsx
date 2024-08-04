@@ -60,7 +60,7 @@ const SingleProduct = () => {
                             </p>
                             <div className="mt-6 flex items-center">
                                 <span className="text-gray-500 mr-2">Price:</span>
-                                <span className="text-3xl font-bold text-orange-500">₹{selectedProduct.productPrice}</span>
+                                <span className="text-3xl font-bold text-primary-main">₹{selectedProduct.productPrice}</span>
                             </div>
                             <div className="mt-4 flex items-center">
                                 <span className="text-gray-500 mr-2">Status:</span>
@@ -71,7 +71,7 @@ const SingleProduct = () => {
                             <button
                                 onClick={handleClick}
                                 className={`mt-8 w-full md:w-auto py-3 px-8 font-semibold text-lg rounded-full transition-colors duration-300 ${selectedProduct.status
-                                    ? 'bg-orange-500 hover:bg-orange-600 text-white'
+                                    ? 'bg-primary-main hover:bg-primary-main text-white'
                                     : 'bg-gray-300 text-gray-500 cursor-not-allowed'
                                     }`}
                                 disabled={!selectedProduct.status}

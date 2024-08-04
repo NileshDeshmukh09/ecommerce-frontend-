@@ -4,22 +4,15 @@ import Screen from '../sharedComp/Screen/Screen';
 import ProtectedParent from './ProtectedParent';
 import ProtectedRoutes from './ProtectedRoutes';
 import UnProtected from './UnProtected';
-// import ProductCategory from '../sharedComp/Products/ProductCategory';
 import SingleProduct from '../sharedComp/Products/SingleProduct';
 import Products from '../sharedComp/Products/Products';
-// import Profile from '../sharedComp/Profile/Profile';
 import Home from '../sharedComp/Home/Home';
 import Signup from '../components/Authentication/Signup';
 import Login from '../components/Authentication/Login';
 import Cart from '../components/Cart/Cart';
-// import PaymentSuccess from '../components/Payment/PaymentSuccess';
-// import PaymentCancel from '../components/Payment/PaymentCancel';
 import Checkout from '../components/User/Checkout';
 import Success from '../sharedComp/Success/Success';
-// import MyOrder from '../components/User/MyOrder';
-// import AdminProduct from '../components/Admin/AdminProduct/AdminProduct';
-// import AdminOrder from '../components/Admin/AdminOrder/AdminOrder';
-// import AdminUser from '../components/Admin/AdminUser/AdminUser';
+
 
 const Router = createBrowserRouter([
     {
@@ -37,10 +30,7 @@ const Router = createBrowserRouter([
                         path: `/products`,
                         element: <Products />,
                     },
-            //         {
-            //             path: `/products/:category`,
-            //             element: <ProductCategory />,
-            //         },
+           
                     {
                         path: `/product/:productId`,
                         element: <SingleProduct />
@@ -56,14 +46,6 @@ const Router = createBrowserRouter([
                 element: <Success />
             },
 
-            // {
-            //     path: "/paymentsuccess",
-            //     element: <PaymentSuccess />
-            // },
-            // {
-            //     path: "/paymentcancel",
-            //     element: <PaymentCancel />
-            // },
             {
                 element: <UnProtected />,
                 children: [
@@ -78,45 +60,18 @@ const Router = createBrowserRouter([
                    
                 ]
             },
-            // {
-            //     element: <ProtectedRoutes allowedRole={["user", "admin"]} />,
-            //     children: [
-            //         {
-            //             path: "/profile",
-            //             element: <Profile />
-            //         }
-            //     ]
-            // },
+           
             {
                 element: <ProtectedRoutes allowedRole={["user"]} />,
                 children: [
-                    // {
-                    //     path: "/myorder",
-                    //     element: <MyOrder />
-                    // },
+                   
                     {
                         path: "/checkout",
                         element: <Checkout />
                     },
                 ]
             },
-            // {
-            //     element: <ProtectedRoutes allowedRole={["admin"]} />,
-            //     children: [
-            //         {
-            //             path: "/adminuser",
-            //             element: <AdminUser />
-            //         },
-            //         {
-            //             path: "/adminproduct",
-            //             element: <AdminProduct />
-            //         },
-            //         {
-            //             path: "/adminorder",
-            //             element: <AdminOrder />
-            //         },
-            //     ]
-            // },
+            
         ]
     }
 ])

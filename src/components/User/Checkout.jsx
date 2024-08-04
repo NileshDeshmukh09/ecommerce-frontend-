@@ -149,7 +149,7 @@ const Checkout = () => {
                 <div className="mt-8">
                     <button
                         type="submit"
-                        className="bg-orange-600 text-white p-4 rounded-lg hover:bg-orange-700 w-full text-lg font-semibold transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105"
+                        className="bg-primary-main text-white p-4 rounded-lg hover:bg-orange-700 w-full text-lg font-semibold transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105"
                     >
                         Pay Now & Confirm Checkout 
                     </button>

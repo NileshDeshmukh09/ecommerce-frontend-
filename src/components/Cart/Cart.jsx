@@ -60,7 +60,7 @@ const Cart = () => {
                                     <h2 className="text-2xl font-semibold text-gray-800 mb-2 line-clamp-1">{item.productName}</h2>
                                     <p className="text-gray-600 mb-4 line-clamp-2">{item.productDesc}</p>
                                     <p className="text-gray-700 mb-2 capitalize"><span className="font-bold">Category:</span> {item.productCategory}</p>
-                                    <p className="text-2xl font-bold text-orange-500 mb-4">₹{item.productPrice}</p>
+                                    <p className="text-2xl font-bold text-primary-main mb-4">₹{item.productPrice}</p>
                                     <div className="flex items-center justify-between">
                                         <div className="flex items-center space-x-4">
                                             <button onClick={() => handleDecrease(item._id)} className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-xl font-bold text-gray-700 hover:bg-gray-300 transition-colors">-</button>
@@ -75,12 +75,12 @@ const Cart = () => {
                     </div>
                 )}
                 <div className="mt-8 bg-white shadow-lg rounded-lg p-6 flex flex-col md:flex-row justify-between items-center select-none">
-                    <h2 className="text-3xl font-bold text-gray-800 mb-4 md:mb-0">Total: <span className="text-orange-500">₹{totalSum.toFixed(2)}</span></h2>
+                    <h2 className="text-3xl font-bold text-gray-800 mb-4 md:mb-0">Total: <span className="text-primary-main">₹{totalSum.toFixed(2)}</span></h2>
                     <button
                         className={`px-8 py-3 text-lg font-semibold text-white rounded-full shadow-lg transition-colors ${
                             totalSum === 0
                                 ? 'bg-gray-400 cursor-not-allowed'
-                                : 'bg-orange-500 hover:bg-orange-600'
+                                : 'bg-primary-main hover:bg-primary-main'
                         }`}
                         onClick={handleCheckout}
                         disabled={totalSum === 0}

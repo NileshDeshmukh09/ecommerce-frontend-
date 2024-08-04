@@ -5,7 +5,17 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        rubik: ["Rubik"],
+      },
+      colors: {
+        primary: {
+          main: "#387ED1",
+        },
+       
+      },
+    },
   },
   plugins: [],
 }

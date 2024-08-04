@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { login } from "../../redux/slices/authSlice";
-import { FaArrowRight } from "react-icons/fa";
 import { PrimaryButton } from "../../sharedComp/Button";
+import { showSnackbar } from "../../redux/slices/snackbarSlice";
+import { login } from "../../redux/slices/authSlice";
 
 const Login = () => {
   const [formData, setFormData] = useState({});
@@ -18,6 +18,12 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     dispatch(login(formData));
+    dispatch(
+        showSnackbar({
+          message: `Welcome ${formData.email} !`,
+          type: "success",
+        })
+      );
   };
 
   useEffect(() => {
